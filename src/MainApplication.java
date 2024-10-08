@@ -1,34 +1,26 @@
+import java.io.File;
+
 public class MainApplication {
 
-    public static void showData(Person person) {
-        System.out.println("Name=" + person.firstName);
-        System.out.println("Height=" + person.height);
-        System.out.println("Age=" + person.getMyAge());
-    }
-
     public static void main(String[] args) {
-        Person winner = new Person();
-        winner.firstName = "Helen";
-        winner.lastName = "Anastasopoulos";
-        winner.height = 167;
-        winner.weight = 65;
-        winner.isMarried = true;
-        winner.changeAgeTo(43);
-        winner.oneYearOlder();
-        winner.oneYearOlder();
-        winner.oneYearOlder();
-        winner.oneYearOlder();
-        winner.oneYearOlder();
-        winner.oneYearOlder();
-        winner.oneYearOlder();
-        winner.oneYearOlder();
-        winner.oneYearOlder();
-        winner.oneYearOlder();
-        winner.oneYearOlder();
-        winner.oneYearOlder();
+        Person winner = new Person("Maria", "Maria");
+        winner.setHeight(167);
+        winner.setWeight(65);
+        winner.setMarried(true);
+        winner.setAge(43);
+        Person p2 = winner.createSibling();
 
-        showData(winner);
-        System.out.println(winner.fullName() + " has a bmi of " + winner.calculateBmi());
+        System.out.println("The original sibling is " + winner.fullName());
+        System.out.println("The other sibling is " + p2.fullName());
+
+        if (winner == p2) {
+            System.out.println("the two siblings are the same");
+        } else {
+            System.out.println("the two siblings are different");
+        }
+
+        Person randomPerson =Math.random() > 0.5 ? winner : p2;
+
     }
 
 
