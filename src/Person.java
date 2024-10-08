@@ -31,6 +31,17 @@ public class Person {
         return bmi;
     }
 
+
+    public Person createSibling(){
+        Person sibling = new Person();
+        sibling.setLastName(lastName);
+        sibling.age = this.age + 10;
+        sibling.setHeight(getHeight());
+        sibling.setWeight(getWeight());
+        sibling.setFirstName(getFirstName());
+        return sibling;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -79,15 +90,6 @@ public class Person {
         this.age = age;
     }
 
-    public Person createSibling(){
-        Person sibling = new Person();
-        sibling.setLastName(lastName);
-        sibling.age = this.age;
-        sibling.setHeight(getHeight());
-        sibling.setWeight(getWeight());
-        sibling.setFirstName(getFirstName());
-        return sibling;
-    }
 }
 
 

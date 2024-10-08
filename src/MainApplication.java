@@ -18,11 +18,6 @@ public class MainApplication {
         } else {
             System.out.println("the two siblings are different");
         }
-
         Person randomPerson =Math.random() > 0.5 ? winner : p2;
-
     }
-
-
-
 }
