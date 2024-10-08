@@ -8,4 +8,15 @@ public class Person {
     public int weight;
     public boolean isMarried;
     public int age;
+
+    public static double staticCalculateBmi(Person person) {
+        double heightInMeters = person.height / 100.0;
+        double bmi = person.weight / heightInMeters / heightInMeters;
+        return bmi;
+    }
+    public  double calculateBmi() {
+        double heightInMeters = height / 100.0;
+        double bmi = weight / heightInMeters / heightInMeters;
+        return bmi;
+    }
 }
